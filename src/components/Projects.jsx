@@ -40,7 +40,7 @@ const Projects = () => {
             in full-stack development.
           </p>
 
-          <div className="space-y-32">
+          <div className="space-y-20 md:space-y-32">
             {projects.map((project, index) => (
               <div 
                 key={index}
@@ -49,10 +49,10 @@ const Projects = () => {
                 } gap-8 items-center`}
               >
                 {/* Project Image */}
-                <div className="lg:w-3/5">
+                <div className="w-full lg:w-3/5">
                   <div className="animate-card group relative rounded-xl overflow-hidden">
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.1),transparent_50%)]"></div>
-                    <div className="relative aspect-video bg-white/5 backdrop-blur-sm overflow-hidden">
+                    <div className="relative aspect-[16/9] bg-white/5 backdrop-blur-sm overflow-hidden">
                       {project.image ? (
                         <img 
                           src={project.image} 
@@ -62,7 +62,8 @@ const Projects = () => {
                       ) : (
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20"></div>
                       )}
-                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6">
+                      {/* Overlay with buttons */}
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 flex-wrap p-4">
                         <a 
                           href={project.liveLink}
                           target="_blank"
@@ -85,7 +86,7 @@ const Projects = () => {
                 </div>
 
                 {/* Project Info */}
-                <div className="lg:w-2/5">
+                <div className="w-full lg:w-2/5">
                   <h3 className="text-2xl font-bold mb-4 text-purple-400">{project.title}</h3>
                   <p className="text-slate-300 mb-6">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-6">

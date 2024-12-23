@@ -45,19 +45,19 @@ const Contact = () => {
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <i className="fas fa-envelope text-blue-400 w-8"></i>
-                    <a href="mailto:your.email@example.com" className="text-slate-300 hover:text-blue-400">
+                    <a href="mailto:your.email@example.com" className="text-slate-300 hover:text-blue-400 transition-colors">
                       your.email@example.com
                     </a>
                   </div>
                   <div className="flex items-center">
-                    <i className="fas fa-phone text-slate-600 w-8"></i>
-                    <a href="tel:+1234567890" className="text-slate-600 hover:text-slate-800">
+                    <i className="fas fa-phone text-blue-400 w-8"></i>
+                    <a href="tel:+1234567890" className="text-slate-300 hover:text-blue-400 transition-colors">
                       +1 (234) 567-890
                     </a>
                   </div>
                   <div className="flex items-center">
-                    <i className="fas fa-map-marker-alt text-slate-600 w-8"></i>
-                    <span className="text-slate-600">Your Location</span>
+                    <i className="fas fa-map-marker-alt text-blue-400 w-8"></i>
+                    <span className="text-slate-300">Your Location</span>
                   </div>
                 </div>
 
