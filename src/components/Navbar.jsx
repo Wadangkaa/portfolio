@@ -52,7 +52,10 @@ const Navbar = () => {
             onClick={() => handleNavClick('home')}
             className="text-xl font-bold text-white hover:text-blue-400 transition-colors"
           >
-            David.dev
+            <span className="flex items-center gap-2">
+              <i className="fas fa-code"></i>
+              David Rai
+            </span>
           </button>
           
           {/* Desktop Menu */}
