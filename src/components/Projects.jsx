@@ -5,17 +5,19 @@ const Projects = () => {
 
 	const projects = [
 		{
-			title: 'Hello Sawari',
+			title: 'Service Eye ERP',
 			description:
-				'A comprehensive logistics platform enabling package delivery, vehicle rentals and moving services. Built with Laravel backend API and modern frontend technologies.',
-			image: '/hello-sawari.jpg',
-			tech: ['Laravel', 'RESTful API', 'MySQL', 'Vue.js'],
+				'A comprehensive multi-tenant ERP system with integrated modules for CRM, Inventory Management, HR, Digital Marketing, and Advanced Reporting. Built with Laravel 10 and Vue 3 Composition API.',
+			image: '/service-eye.jpg',
+			tech: ['Laravel 10', 'Vue 3', 'MySQL', 'RESTful API', 'Charts.js'],
 			featured: true,
 			type: 'Professional',
 			contribution: [
-				'Developed complete backend architecture',
-				'Implemented RESTful API endpoints',
-				'Integrated payment gateway and SMS services',
+				'Architected and developed core ERP modules including CRM, Inventory, HR, and Reporting',
+				'Implemented dynamic reporting system with customizable filters and data visualization',
+				'Built digital marketing module with campaign tracking and analytics',
+				'Designed and implemented multi-tenant architecture for enterprise clients',
+				'Integrated third-party services and APIs for enhanced functionality',
 			],
 		},
 		{
@@ -35,9 +37,9 @@ const Projects = () => {
 		{
 			title: 'Personal Portfolio',
 			description:
-				'A modern, responsive portfolio website showcasing my work and skills. Built with React and Tailwind CSS, featuring smooth animations and interactive elements.',
+				'A modern, responsive portfolio website showcasing my work and skills. Built with React, Tailwind CSS, and Shadcn/UI components, featuring smooth animations and interactive elements.',
 			image: '/portfolio.jpg',
-			tech: ['React', 'Tailwind CSS', 'JavaScript'],
+			tech: ['React', 'Tailwind CSS', 'Shadcn/UI', 'JavaScript'],
 			liveLink: 'https://your-portfolio.com',
 			githubLink: 'https://github.com/wadangkaa/portfolio',
 			featured: true,
