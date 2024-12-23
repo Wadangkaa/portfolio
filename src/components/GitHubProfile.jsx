@@ -47,16 +47,16 @@ const GitHubProfile = () => {
         {profile && (
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/5 p-6 rounded-xl backdrop-blur-sm mb-8">
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
                 <img 
                   src={profile.avatar_url} 
                   alt={profile.name} 
                   className="w-24 h-24 rounded-full"
                 />
-                <div>
+                <div className="text-center sm:text-left">
                   <h3 className="text-2xl font-bold text-white">{profile.name}</h3>
                   <p className="text-slate-300">{profile.bio}</p>
-                  <div className="flex gap-6 mt-3">
+                  <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6 mt-3">
                     <div>
                       <span className="font-semibold text-white">{profile.public_repos}</span>
                       <span className="text-slate-300 ml-1">Repositories</span>
@@ -83,9 +83,9 @@ const GitHubProfile = () => {
                   rel="noopener noreferrer"
                   className="bg-white/5 p-6 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
                 >
-                  <h4 className="text-lg font-semibold mb-2">{repo.name}</h4>
-                  <p className="text-slate-300 text-sm mb-4">{repo.description}</p>
-                  <div className="flex items-center gap-4">
+                  <h4 className="text-lg font-semibold mb-2 break-words">{repo.name}</h4>
+                  <p className="text-slate-300 text-sm mb-4 break-words">{repo.description}</p>
+                  <div className="flex flex-wrap items-center gap-4">
                     <div className="flex items-center">
                       <div className="w-3 h-3 rounded-full mr-1" 
                            style={{ backgroundColor: repo.language ? '#' : '#ddd' }}></div>
@@ -109,7 +109,7 @@ const GitHubProfile = () => {
                 href={`https://github.com/${username}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-slate-300 hover:text-slate-800"
+                className="inline-flex items-center text-slate-300 hover:text-blue-400 transition-colors"
               >
                 View All Repositories
                 <i className="fas fa-arrow-right ml-2"></i>
