@@ -34,7 +34,13 @@ const About = () => {
 		},
 		{ name: 'Backend', items: ['Laravel', 'Node.js', 'PHP', 'RESTful APIs'] },
 		{ name: 'Database', items: ['MySQL'] },
-		{ name: 'Tools', items: ['Git'] },
+		{ name: 'Tools', items: [
+			'Git',
+			'GitHub',
+			'VS Code',
+			'Postman',
+			'Trello'
+		] },
 	]
 
 	return (
