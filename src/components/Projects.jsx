@@ -32,10 +32,10 @@ const Projects = () => {
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-4 text-center">
+          <h2 className="text-4xl font-bold mb-6 text-center pt-8">
             Featured <span className="text-purple-400">Projects</span>
           </h2>
-          <p className="text-slate-300 text-center mb-16 max-w-3xl mx-auto">
+          <p className="text-slate-300 text-center mb-20 max-w-3xl mx-auto">
             Here are some of my recent projects that showcase my skills and experience
             in full-stack development.
           </p>

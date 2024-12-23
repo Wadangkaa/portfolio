@@ -40,10 +40,10 @@ const About = () => {
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-4 text-center">
+          <h2 className="text-4xl font-bold mb-6 text-center pt-8">
             About <span className="text-blue-400">Me</span>
           </h2>
-          <p className="text-slate-300 text-center mb-16 max-w-3xl mx-auto">
+          <p className="text-slate-300 text-center mb-20 max-w-3xl mx-auto">
             A passionate Full Stack Developer with experience in building modern web applications
             and a strong focus on user experience and scalable architecture.
           </p>

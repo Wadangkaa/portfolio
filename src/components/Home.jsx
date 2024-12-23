@@ -36,8 +36,8 @@ const Home = () => {
               <h2 className="text-xl text-blue-400 font-medium">
                 <span className="inline-block animate-wave">👋</span> Hello, I'm
               </h2>
-              <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 leading-tight md:leading-normal pb-2">
-                <span className="leading-relaxed py-2 inline-block">David Chamling Rai</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 leading-tight md:leading-normal pb-2">
+                <span className="leading-relaxed py-2 inline-block whitespace-nowrap">David Chamling Rai</span>
               </h1>
               <h3 className="text-2xl text-slate-300">
                 Full Stack Developer
