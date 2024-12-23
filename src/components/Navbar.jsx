@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useScrollToSection } from '../hooks/useScrollToSection';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const scrollToSection = useScrollToSection();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,9 +29,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (sectionId) => {
+    scrollToSection(sectionId);
     setActiveSection(sectionId);
     setIsMobileMenuOpen(false);
   };
@@ -48,7 +49,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <button 
-            onClick={() => scrollToSection('home')}
+            onClick={() => handleNavClick('home')}
             className="text-xl font-bold text-white hover:text-blue-400 transition-colors"
           >
             David.dev
@@ -59,7 +60,7 @@ const Navbar = () => {
             {navItems.map(item => (
               <button 
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className={`relative px-2 py-1 transition-colors ${
                   activeSection === item.id 
                     ? 'text-blue-400' 
@@ -96,7 +97,7 @@ const Navbar = () => {
               {navItems.map(item => (
                 <button 
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavClick(item.id)}
                   className={`relative px-2 py-2 transition-colors text-left ${
                     activeSection === item.id 
                       ? 'text-blue-400 bg-white/5' 

@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
+import { useScrollToSection } from '../hooks/useScrollToSection';
 
 const Home = () => {
+  const scrollToSection = useScrollToSection();
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const cards = document.getElementsByClassName('animate-card');
@@ -48,20 +51,20 @@ const Home = () => {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <a 
-                  href="#projects"
+                <button 
+                  onClick={() => scrollToSection('projects')}
                   className="animate-card group relative px-8 py-4 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.15),transparent_50%)]"></div>
                   <span className="relative">View My Work</span>
-                </a>
-                <a 
-                  href="#contact"
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')}
                   className="animate-card group relative px-8 py-4 bg-blue-500/20 rounded-xl backdrop-blur-sm hover:bg-blue-500/30 transition-all duration-300"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.15),transparent_50%)]"></div>
                   <span className="relative">Contact Me</span>
-                </a>
+                </button>
               </div>
 
               <div className="flex gap-6 text-slate-300">
