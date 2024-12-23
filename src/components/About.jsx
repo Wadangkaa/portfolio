@@ -104,6 +104,18 @@ const About = () => {
 						</div>
 					</div>
 
+					{/* CV Download */}
+					<div className="text-center mb-20">
+						<a
+							href="/cv.md"
+							download="David_Chamling_Rai_CV.md"
+							className="inline-flex items-center gap-2 px-8 py-4 bg-blue-500/20 rounded-xl backdrop-blur-sm hover:bg-blue-500/30 transition-all duration-300"
+						>
+							<i className="fas fa-download"></i>
+							Download Full Resume
+						</a>
+					</div>
+
 					{/* Skills Section */}
 					<div>
 						<h3 className='text-2xl font-semibold mb-8 text-center'>Skills</h3>

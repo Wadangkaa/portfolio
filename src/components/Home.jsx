@@ -59,6 +59,17 @@ const Home = () => {
 								<div className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.15),transparent_50%)]'></div>
 								<span className='relative'>View My Work</span>
 							</button>
+							<a
+								href="/cv.md"
+								download="David_Chamling_Rai_CV.md"
+								className='animate-card group relative px-8 py-4 bg-blue-500/20 rounded-xl backdrop-blur-sm hover:bg-blue-500/30 transition-all duration-300'
+							>
+								<div className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.15),transparent_50%)]'></div>
+								<span className='relative flex items-center gap-2'>
+									<i className="fas fa-download"></i>
+									Download CV
+								</span>
+							</a>
 							<button
 								onClick={() => scrollToSection('contact')}
 								className='animate-card group relative px-8 py-4 bg-blue-500/20 rounded-xl backdrop-blur-sm hover:bg-blue-500/30 transition-all duration-300'>

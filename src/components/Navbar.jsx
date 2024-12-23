@@ -61,7 +61,7 @@ const Navbar = () => {
 					</button>
 
 					{/* Desktop Menu */}
-					<div className='hidden md:flex space-x-8'>
+					<div className='hidden md:flex space-x-8 items-center'>
 						{navItems.map((item) => (
 							<button
 								key={item.id}
@@ -114,6 +114,14 @@ const Navbar = () => {
 									)}
 								</button>
 							))}
+							<a
+								href="/cv.md"
+								download="David_Chamling_Rai_CV.md"
+								className="px-2 py-2 text-left text-slate-300 hover:text-white hover:bg-white/5 rounded-lg flex items-center gap-2"
+							>
+								<i className="fas fa-download"></i>
+								<span>Download CV</span>
+							</a>
 						</div>
 					</div>
 				</div>
