@@ -55,16 +55,16 @@ const About = () => {
               {experiences.map((exp, index) => (
                 <div 
                   key={index}
-                  className="animate-card group relative p-6 bg-white/5 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
+                  className="animate-card group relative p-6 md:p-8 bg-white/5 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300 border border-white/5"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.1),transparent_50%)]"></div>
                   <div className="relative">
-                    <div className="flex flex-wrap justify-between items-start mb-4">
+                    <div className="flex flex-wrap justify-between items-start mb-6">
                       <div>
                         <h4 className="text-xl font-semibold text-blue-400">{exp.company}</h4>
                         <p className="text-slate-300">{exp.position}</p>
                       </div>
-                      <span className="text-slate-400">{exp.period}</span>
+                      <span className="text-slate-400 bg-white/5 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">{exp.period}</span>
                     </div>
                     <ul className="space-y-2">
                       {exp.description.map((item, i) => (

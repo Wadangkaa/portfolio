@@ -6,6 +6,8 @@ module.exports = {
 			animation: {
 				wave: 'wave 2.5s infinite',
 				tilt: 'tilt 10s infinite linear',
+				slideUp: 'slideUp 0.5s ease-out forwards',
+				fadeIn: 'fadeIn 0.5s ease-out forwards',
 			},
 			keyframes: {
 				wave: {
@@ -28,6 +30,14 @@ module.exports = {
 					'75%': {
 						transform: 'rotate(-1deg)',
 					},
+				},
+				slideUp: {
+					'0%': { transform: 'translateY(100px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' },
+				},
+				fadeIn: {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
 				},
 			},
 		},

@@ -92,40 +92,48 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             <div className="animate-card group relative p-6 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.15),transparent_50%)]"></div>
-              <div className="relative space-y-2">
-                <i className="fab fa-react text-4xl text-blue-400"></i>
+              <div className="relative space-y-3">
+                <i className="fab fa-react text-4xl text-blue-400 transition-transform group-hover:scale-110 duration-300"></i>
                 <h3 className="font-semibold">React</h3>
                 <p className="text-sm text-slate-300">Modern UI Development</p>
               </div>
             </div>
             <div className="animate-card group relative p-6 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.15),transparent_50%)]"></div>
-              <div className="relative space-y-2">
-                <i className="fab fa-vuejs text-4xl text-green-400"></i>
+              <div className="relative space-y-3">
+                <i className="fab fa-vuejs text-4xl text-green-400 transition-transform group-hover:scale-110 duration-300"></i>
                 <h3 className="font-semibold">Vue.js</h3>
                 <p className="text-sm text-slate-300">Progressive Framework</p>
               </div>
             </div>
             <div className="animate-card group relative p-6 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.15),transparent_50%)]"></div>
-              <div className="relative space-y-2">
-                <i className="fab fa-laravel text-4xl text-red-400"></i>
+              <div className="relative space-y-3">
+                <i className="fab fa-laravel text-4xl text-red-400 transition-transform group-hover:scale-110 duration-300"></i>
                 <h3 className="font-semibold">Laravel</h3>
                 <p className="text-sm text-slate-300">Backend Development</p>
               </div>
             </div>
             <div className="animate-card group relative p-6 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.15),transparent_50%)]"></div>
-              <div className="relative space-y-2">
-                <i className="fas fa-database text-4xl text-yellow-400"></i>
+              <div className="relative space-y-3">
+                <i className="fas fa-database text-4xl text-yellow-400 transition-transform group-hover:scale-110 duration-300"></i>
                 <h3 className="font-semibold">Database</h3>
                 <p className="text-sm text-slate-300">Data Management</p>
               </div>
             </div>
           </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+          <button 
+            onClick={() => scrollToSection('about')} 
+            className="text-slate-300 hover:text-blue-400 transition-colors"
+          >
+            <i className="fas fa-chevron-down text-2xl"></i>
+          </button>
         </div>
       </div>
     </div>
