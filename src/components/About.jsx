@@ -1,23 +1,25 @@
 const About = () => {
   const experiences = [
     {
-      company: "Startup 1",
-      position: "Full Stack Developer",
-      period: "20XX - Present",
+      company: "Service Eye",
+      position: "Full Stack Developer & Team Lead",
+      period: "Feb, 2024 - Present",
       description: [
-        "Led development of key features using React and Laravel",
-        "Improved application performance by 40%",
-        "Implemented CI/CD pipelines and automated testing",
+        "Leading development team and managing project deliverables for Service Eye's enterprise solutions",
+        "Architecting and developing ERP system using Laravel backend API and Vue 3 Composition API frontend",
+        "Successfully delivered multiple client websites with modern tech stacks and best practices"
       ],
     },
     {
-      company: "Startup 2",
-      position: "Full Stack Developer",
-      period: "20XX - 20XX",
+      company: "EEE Innovation Ghar",
+      position: "Backend Developer", 
+      period: "Jun, 2023 - Nov, 2023",
       description: [
-        "Developed responsive web applications using Vue.js",
-        "Integrated third-party APIs and payment gateways",
-        "Mentored junior developers and led code reviews",
+        "Architected and developed scalable web applications using Laravel framework",
+        "Successfully integrated multiple third-party services including Esewa payment gateway and Sparrow SMS API",
+        "Engineered robust backend infrastructure for Business X e-commerce platform",
+        "Developed comprehensive REST API for Hello Sawari - a logistics platform enabling package delivery, vehicle rentals and moving services",
+        "Provided technical mentorship and conducted thorough code reviews to ensure code quality"
       ],
     },
   ];
@@ -25,8 +27,8 @@ const About = () => {
   const skills = [
     { name: 'Frontend', items: ['React', 'Vue.js', 'Tailwind CSS', 'JavaScript'] },
     { name: 'Backend', items: ['Laravel', 'Node.js', 'PHP', 'RESTful APIs'] },
-    { name: 'Database', items: ['MySQL', 'MongoDB', 'PostgreSQL', 'Redis'] },
-    { name: 'Tools', items: ['Git', 'Docker', 'AWS', 'Linux'] },
+    { name: 'Database', items: ['MySQL'] },
+    { name: 'Tools', items: ['Git'] },
   ];
 
   return (
