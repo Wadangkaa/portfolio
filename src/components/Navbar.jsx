@@ -1,124 +1,125 @@
-import { useState, useEffect } from 'react';
-import { useScrollToSection } from '../hooks/useScrollToSection';
+import { useState, useEffect } from 'react'
+import { useScrollToSection } from '../hooks/useScrollToSection'
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const scrollToSection = useScrollToSection();
+	const [isScrolled, setIsScrolled] = useState(false)
+	const [activeSection, setActiveSection] = useState('home')
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+	const scrollToSection = useScrollToSection()
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 50)
 
-      // Update active section based on scroll position
-      const sections = ['home', 'about', 'projects', 'contact'];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+			// Update active section based on scroll position
+			const sections = ['home', 'about', 'projects', 'contact']
+			for (const section of sections) {
+				const element = document.getElementById(section)
+				if (element) {
+					const rect = element.getBoundingClientRect()
+					if (rect.top <= 100 && rect.bottom >= 100) {
+						setActiveSection(section)
+						break
+					}
+				}
+			}
+		}
 
-  const handleNavClick = (sectionId) => {
-    scrollToSection(sectionId);
-    setActiveSection(sectionId);
-    setIsMobileMenuOpen(false);
-  };
+		window.addEventListener('scroll', handleScroll)
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [])
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
-  ];
+	const handleNavClick = (sectionId) => {
+		scrollToSection(sectionId)
+		setActiveSection(sectionId)
+		setIsMobileMenuOpen(false)
+	}
 
-  return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-slate-900/90 backdrop-blur-sm shadow-lg py-4' : 'bg-transparent py-6'
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
-          <button 
-            onClick={() => handleNavClick('home')}
-            className="text-xl font-bold text-white hover:text-blue-400 transition-colors"
-          >
-            <span className="flex items-center gap-2">
-              <i className="fas fa-code"></i>
-              David Rai
-            </span>
-          </button>
-          
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map(item => (
-              <button 
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`relative px-2 py-1 transition-colors ${
-                  activeSection === item.id 
-                    ? 'text-blue-400' 
-                    : 'text-slate-300 hover:text-white'
-                }`}
-              >
-                {item.label}
-                {activeSection === item.id && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
-                )}
-              </button>
-            ))}
-          </div>
+	const navItems = [
+		{ id: 'home', label: 'Home' },
+		{ id: 'about', label: 'About' },
+		{ id: 'projects', label: 'Projects' },
+		{ id: 'contact', label: 'Contact' },
+	]
 
-          {/* Mobile Menu Button */}
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white hover:text-blue-400 transition-colors"
-          >
-            <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
-          </button>
-        </div>
+	return (
+		<nav
+			className={`fixed w-full z-50 transition-all duration-300 ${
+				isScrolled
+					? 'bg-slate-900/90 backdrop-blur-sm shadow-lg py-4'
+					: 'bg-transparent py-6'
+			}`}>
+			<div className='container mx-auto px-4'>
+				<div className='flex justify-between items-center'>
+					<button
+						onClick={() => handleNavClick('home')}
+						className='text-xl font-bold text-white hover:text-blue-400 transition-colors'>
+						<span className='flex items-center gap-2'>
+							<i className='fas fa-code'></i>
+							David Rai
+						</span>
+					</button>
 
-        {/* Mobile Menu Dropdown */}
-        <div 
-          className={`md:hidden absolute left-0 right-0 px-4 py-2 mt-4 bg-slate-900/95 backdrop-blur-sm transition-all duration-300 ${
-            isMobileMenuOpen 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 -translate-y-4 pointer-events-none'
-          }`}
-        >
-          <div className="container mx-auto">
-            <div className="flex flex-col space-y-4 py-4">
-              {navItems.map(item => (
-                <button 
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className={`relative px-2 py-2 transition-colors text-left ${
-                    activeSection === item.id 
-                      ? 'text-blue-400 bg-white/5' 
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
-                  } rounded-lg`}
-                >
-                  {item.label}
-                  {activeSection === item.id && (
-                    <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-blue-400 rounded-full"></span>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
-};
+					{/* Desktop Menu */}
+					<div className='hidden md:flex space-x-8'>
+						{navItems.map((item) => (
+							<button
+								key={item.id}
+								onClick={() => handleNavClick(item.id)}
+								className={`relative px-2 py-1 transition-colors ${
+									activeSection === item.id
+										? 'text-blue-400'
+										: 'text-slate-300 hover:text-white'
+								}`}>
+								{item.label}
+								{activeSection === item.id && (
+									<span className='absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full'></span>
+								)}
+							</button>
+						))}
+					</div>
 
-export default Navbar; 
+					{/* Mobile Menu Button */}
+					<button
+						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+						className='md:hidden text-white hover:text-blue-400 transition-colors'>
+						<i
+							className={`fas ${
+								isMobileMenuOpen ? 'fa-times' : 'fa-bars'
+							} text-xl`}></i>
+					</button>
+				</div>
+
+				{/* Mobile Menu Dropdown */}
+				<div
+					className={`md:hidden absolute left-0 right-0 px-4 py-2 mt-4 bg-slate-900/95 backdrop-blur-sm transition-all duration-300 ${
+						isMobileMenuOpen
+							? 'opacity-100 translate-y-0'
+							: 'opacity-0 -translate-y-4 pointer-events-none'
+					}`}>
+					<div className='container mx-auto'>
+						<div className='flex flex-col space-y-4 py-4'>
+							{navItems.map((item) => (
+								<button
+									key={item.id}
+									onClick={() => handleNavClick(item.id)}
+									className={`relative px-2 py-2 transition-colors text-left ${
+										activeSection === item.id
+											? 'text-blue-400 bg-white/5'
+											: 'text-slate-300 hover:text-white hover:bg-white/5'
+									} rounded-lg`}>
+									{item.label}
+									{activeSection === item.id && (
+										<span className='absolute left-0 top-0 bottom-0 w-0.5 bg-blue-400 rounded-full'></span>
+									)}
+								</button>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	)
+}
+
+export default Navbar
